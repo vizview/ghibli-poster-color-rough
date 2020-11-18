@@ -22,11 +22,11 @@ function renderDetails(info) {
   var total = 0;
   for(let j in info) {
     let jtem = info[j];
-    total += jtem.percent*100
+    total += jtem.percent
   }
   for (let e in info) {
     details.push(
-        <div key={e + '-detail'} style={{width:  `${info[e].percent*100./total * 100}%`, height:'20px', backgroundColor: info[e].html_code}}>
+        <div key={e + '-detail'} style={{width:  `${info[e].percent/total * 100}%`, height:'20px', backgroundColor: info[e].html_code}}>
         </div>
     )
   }

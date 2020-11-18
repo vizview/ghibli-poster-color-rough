@@ -43,7 +43,7 @@ function renderData(googleData) {
     for(let i in data) {
       let item = data[i];
       colors.push(
-        <div key={i} className='p-0 m-0' style={{width: `${item.pixelFraction*100/total * 100}%`, height: '50px', backgroundColor: rgb(item.color.red, item.color.green, item.color.blue)}}>
+        <div key={i} className='p-0 m-0' style={{width: `${item.pixelFraction*100}%`, height: '50px', backgroundColor: rgb(item.color.red, item.color.green, item.color.blue)}}>
         </div>
       )
     }
