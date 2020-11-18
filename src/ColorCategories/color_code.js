@@ -12,7 +12,6 @@ const color_names = {
     "white": "#f4f5f0",
     "pink": "#e3768c",
     "mauve": "#ac6075",
-    "teal": "#426972",
     "green": "#008000",
     "greige": "#a4b39f",
     "beige": "#e0c4b2",
