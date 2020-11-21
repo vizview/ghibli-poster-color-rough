@@ -49,7 +49,7 @@ export default function YearCompare({showAll}) {
                     <div className='row'>
                         {renderColors(colors, 'hue', true)}
                     </div>
-                    <div className='row'>
+                    <div className='row  pb-5'>
                         {renderColors(colors, 'hue', showAll)}
                     </div>
                     <div className='row'>
