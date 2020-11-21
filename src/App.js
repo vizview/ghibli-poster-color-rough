@@ -5,6 +5,8 @@ import Immaga from './Immaga/Immaga';
 import ColorCategory from './ColorCategories/ColorCategories'
 import HueDisplay from './HueDisplay';
 import HSLDisplay from './HSL_Display/HSL_Display';
+import YearCompare from './YearCompare/YearCompare';
+
 function App() {
   return (
     <div className="App">
@@ -21,6 +23,8 @@ function App() {
       <HSLDisplay showAll={false}/>
       <h2>Show Color from Posters</h2>
       <HSLDisplay showAll={true}/>
+      <h2>Compare year</h2>
+      <YearCompare showAll={false}/>
     </div>
   );
 }

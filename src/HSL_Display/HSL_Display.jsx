@@ -1,5 +1,4 @@
 import React from "react";
-import { hsl } from "d3";
 import disney from './disney-hsl';
 import ghibli from './ghibli-hsl';
 import pixar from './pixar-hsl';
