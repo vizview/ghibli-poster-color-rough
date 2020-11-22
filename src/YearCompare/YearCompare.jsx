@@ -5,6 +5,9 @@ import ghibli from './ghibli_year_color_hsl';
 
 export default function YearCompare({showAll}) {
     const years = [
+        1984,
+        1986,
+        1988,
         1989,
         1992,
         1997,
@@ -17,22 +20,30 @@ export default function YearCompare({showAll}) {
     function renderTableContent(data1, data2) {
         var result = [];
         for(let i in years) {
+            var content = years[i];
+            if(years[i] == 1984) {
+                content = '1984/1985'
+            }
             result.push(
                 <tr key={years[i]+'-tr'}>
-                    <th scope="row">{years[i]}</th>
-                    {renderItem(data1, years[i])}
-                    {renderItem(data2, years[i])}
+                    <th scope="row">{content}</th>
+                    {renderItem(data1, years[i], 'ghibli')}
+                    {renderItem(data2, years[i], 'disney')}
                 </tr>
             )
         }
         return result
     }
 
-    function renderItem(data, year){
+    function renderItem(data, year, dataName){
+        var theYear = year;
+        if(dataName == 'disney' && year == 1984) {
+            theYear=1985
+        }
         var result = [];
-        const filtered = Object.keys(data).filter(movie => parseInt(data[movie].year) === year);
+        const filtered = Object.keys(data).filter(movie => parseInt(data[movie].year) === theYear);
         result.push(
-            <td key={year + 'list'}>
+            <td key={theYear + 'list'}>
                 {renderColorList(data, filtered)}
             </td>
         )
@@ -49,7 +60,7 @@ export default function YearCompare({showAll}) {
                     <div className='row'>
                         {renderColors(colors, 'hue', true)}
                     </div>
-                    <div className='row  pb-5'>
+                    <div className='row pb-5'>
                         {renderColors(colors, 'hue', showAll)}
                     </div>
                     <div className='row'>
@@ -57,6 +68,91 @@ export default function YearCompare({showAll}) {
                     </div>
                     <div className='row'>
                         {renderColors(colors, 'sat', showAll)}
+                    </div>
+                </div>
+            );
+        }
+        return result
+    }
+
+        
+    function renderCompare() {
+        var result = [];
+        for(let i in years) {
+            var content = years[i];
+            if(years[i] == 1984) {
+                content = '1984/1985'
+            }
+            result.push(
+                <div key={years[i]+'-compare'}>
+                    {renderCompareItem(years[i])}
+                </div>
+            )
+        }
+        return result
+    }
+
+    
+    function renderCompareItem(year){
+        var disneyYear = year;
+        if(year == 1984) {
+            disneyYear=1985
+        }
+        var result = [];
+        const filteredDis = Object.keys(disney).filter(movie => parseInt(disney[movie].year) === disneyYear);
+        const filteredGhibli = Object.keys(ghibli).filter(movie => parseInt(ghibli[movie].year) === year);
+        result.push(
+            <div key={year + 'compare-list'}>
+                <strong>{year}</strong>
+                {compare(filteredDis, filteredGhibli)}
+            </div>
+        )
+        return result
+    }
+
+    function compare(filteredDis, filteredGhibli) {
+        var result = [];
+        for (let i in filteredGhibli) {
+            let colors = ghibli[filteredGhibli[i]]['colors'];
+            result.push(
+                <div key={filteredGhibli[i]}>
+                    <div>{filteredGhibli[i]}</div>
+                    <div className='row'>
+                        <div className='row mr-5'>
+                            {renderColors(colors, 'light', showAll)}
+                        </div>
+                        <div className='row mr-5'>
+                            {renderColors(colors, 'sat', showAll)}
+                        </div>
+                        <div className='row mr-5'>
+                        {renderColors(colors, 'hue', showAll)}
+                        </div>
+                        <div className='row mr-5'>
+                        {renderColors(colors, 'hue', true)}
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        for (let i in filteredDis) {
+            let colors = disney[filteredDis[i]]['colors'];
+            result.push(
+                <div key={filteredDis[i]}>
+                    <div>{filteredDis[i]}</div>
+                    <div className='row'>
+                        <div className='row mr-5'>
+                            {renderColors(colors, 'light', showAll)}
+                        </div>
+                        <div className='row mr-5'>
+                            {renderColors(colors, 'sat', showAll)}
+                        </div>
+                        <div className='row mr-5'>  
+                            {renderColors(colors, 'hue', showAll)}
+                        </div>
+                         <div className='row mr-5'>
+                        {renderColors(colors, 'hue', true)}
+                        </div>
                     </div>
                 </div>
             );
@@ -89,7 +185,7 @@ export default function YearCompare({showAll}) {
             } else if(display=='sat'){
                 bg = `hsl(0, ${color[1]*100}%, 50%)`;
             }
-            let width = 1100/3/data.length;
+            let width = 700/3/data.length;
             list.push(
                 <div
                     key={i}
@@ -117,6 +213,11 @@ export default function YearCompare({showAll}) {
             </tbody>
             </table>
 
+            <div className="table">
+                <div className="pb-5">
+                    {renderCompare()}
+                </div>
+            </div>
         </div>
     );
 }
