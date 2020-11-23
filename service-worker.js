@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ghibli-poster-color-rough/precache-manifest.de303e6e55079d6465f9ff5f11939549.js"
+  "/ghibli-poster-color-rough/precache-manifest.0f8f46897069114c24f8ff086dc05bf4.js"
 );
 
 self.addEventListener('message', (event) => {

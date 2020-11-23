@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ghibli-poster-color-rough/static/css/main.e3a14eb1.chunk.css",
-    "main.js": "/ghibli-poster-color-rough/static/js/main.4f54fd82.chunk.js",
-    "main.js.map": "/ghibli-poster-color-rough/static/js/main.4f54fd82.chunk.js.map",
+    "main.js": "/ghibli-poster-color-rough/static/js/main.508fa83a.chunk.js",
+    "main.js.map": "/ghibli-poster-color-rough/static/js/main.508fa83a.chunk.js.map",
     "runtime-main.js": "/ghibli-poster-color-rough/static/js/runtime-main.e1b49daa.js",
     "runtime-main.js.map": "/ghibli-poster-color-rough/static/js/runtime-main.e1b49daa.js.map",
     "static/css/2.437d98bc.chunk.css": "/ghibli-poster-color-rough/static/css/2.437d98bc.chunk.css",
     "static/js/2.2fb89f44.chunk.js": "/ghibli-poster-color-rough/static/js/2.2fb89f44.chunk.js",
     "static/js/2.2fb89f44.chunk.js.map": "/ghibli-poster-color-rough/static/js/2.2fb89f44.chunk.js.map",
     "index.html": "/ghibli-poster-color-rough/index.html",
-    "precache-manifest.de303e6e55079d6465f9ff5f11939549.js": "/ghibli-poster-color-rough/precache-manifest.de303e6e55079d6465f9ff5f11939549.js",
+    "precache-manifest.0f8f46897069114c24f8ff086dc05bf4.js": "/ghibli-poster-color-rough/precache-manifest.0f8f46897069114c24f8ff086dc05bf4.js",
     "service-worker.js": "/ghibli-poster-color-rough/service-worker.js",
     "static/css/2.437d98bc.chunk.css.map": "/ghibli-poster-color-rough/static/css/2.437d98bc.chunk.css.map",
     "static/css/main.e3a14eb1.chunk.css.map": "/ghibli-poster-color-rough/static/css/main.e3a14eb1.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.437d98bc.chunk.css",
     "static/js/2.2fb89f44.chunk.js",
     "static/css/main.e3a14eb1.chunk.css",
-    "static/js/main.4f54fd82.chunk.js"
+    "static/js/main.508fa83a.chunk.js"
   ]
 }
