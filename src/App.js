@@ -16,7 +16,7 @@ function App() {
       <Immaga />
       <h1 className='pt-5'>Color Category</h1>
       <ColorCategory />
-      <h1 className='pt-5'>萱找的大佬算法</h1>
+      <h1 className='pt-5'></h1>
       <HueDisplay />
       <h1 className='pt-5'>Sort by HSL</h1>
       <h2>Pure Colors</h2>

@@ -76,7 +76,7 @@ export default function YearCompare({showAll}) {
     }
 
         
-    function renderCompare() {
+    function renderCompare(item, datName) {
         var result = [];
         for(let i in years) {
             var content = years[i];
@@ -85,7 +85,7 @@ export default function YearCompare({showAll}) {
             }
             result.push(
                 <div key={years[i]+'-compare'}>
-                    {renderCompareItem(years[i])}
+                    {renderCompareItem(years[i], item, datName)}
                 </div>
             )
         }
@@ -93,7 +93,7 @@ export default function YearCompare({showAll}) {
     }
 
     
-    function renderCompareItem(year){
+    function renderCompareItem(year, item, datName){
         var disneyYear = year;
         if(year == 1984) {
             disneyYear=1985
@@ -103,60 +103,62 @@ export default function YearCompare({showAll}) {
         const filteredGhibli = Object.keys(ghibli).filter(movie => parseInt(ghibli[movie].year) === year);
         result.push(
             <div key={year + 'compare-list'}>
-                <strong>{year}</strong>
-                {compare(filteredDis, filteredGhibli)}
+                {/* <strong>{year}</strong> */}
+                {compare(filteredDis, filteredGhibli, item, datName)}
             </div>
         )
         return result
     }
 
-    function compare(filteredDis, filteredGhibli) {
+    function compare(filteredDis, filteredGhibli, item, datName) {
         var result = [];
+        var datafilter = datName === 'disney' ? filteredDis : filteredGhibli;
+        var data = datName === 'disney' ? disney : ghibli;
         for (let i in filteredGhibli) {
-            let colors = ghibli[filteredGhibli[i]]['colors'];
+            let colors = data[datafilter[i]]['colors'];
             result.push(
-                <div key={filteredGhibli[i]}>
-                    <div>{filteredGhibli[i]}</div>
+                <div key={datafilter[i]}>
+                    {/* <div>{filteredGhibli[i]}</div> */}
                     <div className='row'>
                         <div className='row mr-5'>
-                            {renderColors(colors, 'light', showAll)}
+                            {renderColors(colors, item, showAll)}
                         </div>
-                        <div className='row mr-5'>
+                        {/* <div className='row mr-5'>
                             {renderColors(colors, 'sat', showAll)}
                         </div>
                         <div className='row mr-5'>
                         {renderColors(colors, 'hue', showAll)}
                         </div>
                         <div className='row mr-5'>
-                        {renderColors(colors, 'hue', true)}
-                        </div>
+                        {renderColors(colors, 'hue', true)} */}
+                        {/* </div> */}
                     </div>
                 </div>
             );
         }
 
-        for (let i in filteredDis) {
-            let colors = disney[filteredDis[i]]['colors'];
-            result.push(
-                <div key={filteredDis[i]}>
-                    <div>{filteredDis[i]}</div>
-                    <div className='row'>
-                        <div className='row mr-5'>
-                            {renderColors(colors, 'light', showAll)}
-                        </div>
-                        <div className='row mr-5'>
-                            {renderColors(colors, 'sat', showAll)}
-                        </div>
-                        <div className='row mr-5'>  
-                            {renderColors(colors, 'hue', showAll)}
-                        </div>
-                         <div className='row mr-5'>
-                        {renderColors(colors, 'hue', true)}
-                        </div>
-                    </div>
-                </div>
-            );
-        }
+        // for (let i in filteredDis) {
+        //     let colors = disney[filteredDis[i]]['colors'];
+        //     result.push(
+        //         <div key={filteredDis[i]}>
+        //             {/* <div>{filteredDis[i]}</div> */}
+        //             <div className='row'>
+        //                 <div className='row mr-5'>
+        //                     {renderColors(colors, item, showAll)}
+        //                 </div>
+        //                 {/* <div className='row mr-5'>
+        //                     {renderColors(colors, 'sat', showAll)}
+        //                 </div>
+        //                 <div className='row mr-5'>  
+        //                     {renderColors(colors, 'hue', showAll)}
+        //                 </div>
+        //                  <div className='row mr-5'>
+        //                 {renderColors(colors, 'hue', true)} */}
+        //                 {/* </div> */}
+        //             </div>
+        //         </div>
+        //     );
+        // }
         return result
     }
 
@@ -214,8 +216,17 @@ export default function YearCompare({showAll}) {
             </table>
 
             <div className="table">
-                <div className="pb-5">
-                    {renderCompare()}
+                <div className="row pb-5">
+                    <div className="col pb-5">
+                        {renderCompare('light', 'ghibli')}
+                        {renderCompare('hue','ghibli')}
+                        {renderCompare('sat','ghibli')}
+                    </div>
+                    <div className="col pb-5">
+                        {renderCompare('light', 'disney')}
+                        {renderCompare('hue', 'disney')}
+                        {renderCompare('sat', 'disney')}
+                    </div>
                 </div>
             </div>
         </div>
