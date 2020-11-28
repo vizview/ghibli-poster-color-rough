@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ac67bcfd4b2683454acadc7ad4240b7e",
+    "revision": "00a6356fff2f50b1a30b308346185012",
     "url": "/ghibli-poster-color-rough/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ghibli-poster-color-rough/static/css/2.437d98bc.chunk.css"
   },
   {
-    "revision": "4bbd2d21d98ceb204110",
+    "revision": "25d163b53f3a68c833c8",
     "url": "/ghibli-poster-color-rough/static/css/main.e3a14eb1.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ghibli-poster-color-rough/static/js/2.2fb89f44.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4bbd2d21d98ceb204110",
-    "url": "/ghibli-poster-color-rough/static/js/main.508fa83a.chunk.js"
+    "revision": "25d163b53f3a68c833c8",
+    "url": "/ghibli-poster-color-rough/static/js/main.b1dc8b66.chunk.js"
   },
   {
     "revision": "8364941c14527a196e2a",
