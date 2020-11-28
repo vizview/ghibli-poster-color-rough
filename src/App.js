@@ -6,6 +6,7 @@ import ColorCategory from './ColorCategories/ColorCategories'
 import HueDisplay from './HueDisplay';
 import HSLDisplay from './HSL_Display/HSL_Display';
 import YearCompare from './YearCompare/YearCompare';
+import FullYearCompare from './FullYearCompare/FullYearCompare';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <HSLDisplay showAll={true}/>
       <h2>Compare year</h2>
       <YearCompare showAll={false}/>
+      <FullYearCompare />
     </div>
   );
 }
